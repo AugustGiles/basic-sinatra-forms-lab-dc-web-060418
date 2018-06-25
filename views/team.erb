@@ -5,10 +5,16 @@
   <title>Basketball Team</title>
  </head>
  <body>
- 
+
+   <% @params.each do |k, v| %>
+    <% title = k.split("_").collect {|word| word.capitalize}.join(" ")%>
+    <% if title == "Team Name" %>
+      <h1><%= "#{title}: #{v}" %></h1>
+    <% else %>
+      <h2><%= "#{title}: #{v}" %></h2>
+    <% end %>
+   <%end%>
 
 
  </body>
 </html>
-
-
